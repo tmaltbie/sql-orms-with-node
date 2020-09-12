@@ -19,25 +19,25 @@ const dbModel = (array, model) => {
       {
         title: 'Aliens',
         runTime: 137,
-        releaseDate: 1986-07-18, // yyyy-mm-dd
+        releaseDate: '1986-07-18', // yyyy-mm-dd
         isAvailableOnVHS: true,
       },
       {
         title: 'Spirited Away',
         runTime: 125,
-        releaseDate: 2003-03-28,
+        releaseDate: '2003-03-28',
         isAvailableOnVHS: true,
       },
       {
         title: 'Moneyball',
         runTime: 133,
-        releaseDate: 2011-09-23,
+        releaseDate: '2011-09-23',
         isAvailableOnVHS: false,
       },
       {
         title: 'Three Kings',
         runTime: 114,
-        releaseDate: 1999-10-01,
+        releaseDate: '1999-10-01',
         isAvailableOnVHS: true,
       }
     ]
@@ -53,6 +53,12 @@ const dbModel = (array, model) => {
     const actorsTable = dbModel(actors, Actor);
 
     await Promise.all([moviesTable, actorsTable])
+
+    // const movie3 = await Movie.build({
+    //   title: 'Toy Story 3',
+    //   runtime: 103,
+    //   releaseDate: '2010-06-18'
+    // })
 
   } catch (error) {
     if (error.name === 'SequelizeValidationError') {
